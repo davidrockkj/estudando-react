@@ -1,0 +1,26 @@
+.Card {
+    border: 3px solid;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+
+.App .Cards {
+    padding: 5px 0;
+    display: flex;
+    justify-content: center; /* Centralizando todos os cards ao centro */
+    flex-wrap: wrap; /* Quebrando a linha sempre que couber, ou não, o card */
+}
+
+.Card .Content {
+    flex-grow: 1; /* Significa que a classe content vai crescer todo o espaço que sobrar */
+    background-color: white;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
