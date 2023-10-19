@@ -1,0 +1,33 @@
+.TabelaRepeticao {
+    /* width: 100%;
+    height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.TabelaRepeticao table {
+    width: 10000px;
+}
+ 
+.TabelaRepeticao thead {
+    background-color: #9a6d38;
+    border-bottom: 1px solid black;
+    color: white;
+}
+
+.TabelaRepeticao th {
+    min-width: 20px;
+}
+ 
+.TabelaRepeticao tbody {
+    text-align: center;
+}
+
+.Par {
+    background-color: #ddd;
+}
+
+.Impar {
+    background-color: #ccc;
+}
