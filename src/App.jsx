@@ -1,6 +1,7 @@
 import './App.css'
 import React from 'react';
 
+import UsuarioInfo from './components/condicional/UsuarioInfo';
 import ParOuImpar from './components/condicional/ParOuImpar';
 import TabelaProdutos from './components/repeticao/TabelaProdutos';
 import ListaAlunos from './components/repeticao/ListaAlunos';
@@ -20,6 +21,12 @@ export default () =>
             
             <Card titulo='#09 - Renderização Condicional' color='#006e90'>
                 <ParOuImpar numero={20} />
+                <UsuarioInfo usuario={{ nome: 'Fernando'}} ></UsuarioInfo>
+                {/* A partir daqui, cai no Else */}
+                <UsuarioInfo usuario={{ email: 'fer@nando.com'}} />
+                <UsuarioInfo usuario={{ }} />
+                <UsuarioInfo  />
+               
             </Card>
 
             <Card titulo='#08 - Desafio Repetição' color='#9a6d38'>
