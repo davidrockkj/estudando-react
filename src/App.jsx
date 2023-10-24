@@ -1,7 +1,8 @@
 import './App.css'
 import React from 'react';
 
-
+import Contador from './components/contador/Contador';
+import Input from './components/formulario/Input';
 import IndiretaPai from './components/comunicacao/IndiretaPai';
 import DiretaPai from './components/comunicacao/DiretaPai';
 import UsuarioInfo from './components/condicional/UsuarioInfo';
@@ -22,6 +23,14 @@ export default () =>
 
         <div className='Cards'>
             
+            <Card titulo='#13 - Contador' color='#a20021'>
+                <Contador numeroInicial={10} />
+            </Card>
+            
+            <Card titulo='#12 - Componente Controlado (Input)' color='#FFC233'>
+                <Input />
+            </Card>
+
             <Card titulo='#11 - Comunicação Indireta' color='#595758'>
                 <IndiretaPai />
             </Card>
