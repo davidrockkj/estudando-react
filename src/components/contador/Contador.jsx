@@ -1,6 +1,10 @@
 import "./Contador.css";
 import React from "react";
 
+import Display from './Display'
+import Botoes from './Botoes'
+import PassoForm from './PassoForm'
+
 // Componente baseado em classe
 export default class Contador extends React.Component {
   // 1 - Passando os atributos pelo estado -----------------------------
@@ -10,40 +14,6 @@ export default class Contador extends React.Component {
     passo: this.props.passoInicial || 5,
   };
 
-  /*
-     *  2 - Passando os atributos por um construtor -----------------------
-    constructor(props){
-        super(props)
-    }
-
-    //
-     *  3 - Passando os atributos por um construtor e um estado -----------
-    constructor(props){
-        super(props)
-
-        this.state = {
-            // * Inicializando com o valor inicial
-            numero: props.numeroInicial
-        }
-    }
-    */
-
-  /**
-     * Função que incrementa o valor do contador
-     * Isso irá alterar o valor (estado) de 'numero'
-     * Dessa maneira ele apresenta erro, pois o 'this' não aponta para o local correto
-    
-    inc() {
-        this.setState({
-            numero: this.state.numero + 1
-        })
-    }
-
-    
-     *  A maneira mais prática de criar essa função seria através da Arrow Function
-     *  Pois o 'this' dentro de uma Arrow está relacionado com o contexto no qual
-        a função foi escrita
-     */
   inc = () => {
     this.setState({
       numero: this.state.numero + this.state.passo,
@@ -58,9 +28,9 @@ export default class Contador extends React.Component {
   };
 
   // Função para alterar o valor do 'passo'
-  setPasso = (evento) => {
+  setPasso = (novoPasso) => {
     this.setState({
-      passo: +evento.target.value,
+      passo: novoPasso,
       // o '+' converte o valor para 'int'
     });
   };
@@ -69,18 +39,15 @@ export default class Contador extends React.Component {
     return (
       <div className="Contador">
         <h2>Contador</h2>
-        <h3>{this.state.numero}</h3>
-        <div>
-          <label htmlFor="passoInput">Passo: </label>
-          <input
-            id="passoInput"
-            type="number"
-            value={this.state.passo}
-            onChange={this.setPasso}
+        <Display numero={this.state.numero} />
+        <PassoForm
+          passo={this.state.passo}
+          setPasso={this.setPasso}
           />
-        </div>
-        <button onClick={this.inc}>+</button>
-        <button onClick={this.dec}>-</button>
+        <Botoes
+          setInc={this.inc} 
+          setDec={this.dec}
+          />
       </div>
     );
   }
